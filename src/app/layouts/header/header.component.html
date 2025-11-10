@@ -1,0 +1,154 @@
+  
+  <!-- 1st Nav-bar -->
+  
+  <header class="topbar">
+    <div class="topbar-left">
+
+
+    </div>
+    <div class="topbar-right">
+      <button class="credits-btn" (mouseenter)="openDropdown('settings')"
+     (mouseleave)="closeDropdown('settings')">
+        <span class="crown">👑</span> CREDITS
+      </button>
+      <a href="#" class="help" (mouseenter)="openDropdown('help')"
+     (mouseleave)="closeDropdown('help')">HELP</a>
+      <span class="divider">|</span>
+      <div  (mouseenter)="openDropdown('user')"
+     (mouseleave)="closeDropdown('user')">
+<!-- {{customerDetails|json}} -->
+      <span class="username">HI, {{customerDetails?.first_name}}</span>
+      <img src="data:image/jpeg;base64,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" alt="User" class="profile-pic">
+<div class="btn-group"
+     >
+
+
+  <div class="user-dropdown-menu shadow" [class.show]="isDropdownOpen('user')">
+    <a class="user-item" href="#">PROFILE</a>
+    <a class="user-item" href="#">ORDER</a>
+    <a class="user-item" href="#">RECENTLY VIEWED</a>
+    <a class="user-item" href="#">WISHLIST</a>
+    <a class="user-item" href="#">ACCOUNT SETTING</a>
+    <a class="user-item logout" href="#">→ LOG OUT</a>
+  </div>
+</div>
+<div class="btn-group"
+     >
+
+
+  <div class="user-dropdown-men shadow" [class.show]="isDropdownOpen('help')">
+    <a class="user-item" href="#"></a>
+    <a class="user-item" href="#">CONTACT</a>
+    <a class="user-item" href="#">SHIPING & DELIVERY</a>
+    <a class="user-item" href="#">RETURN POLICY</a>
+  </div>
+</div>
+ <div class="btn-group"
+     >
+ <div class="money-menu shadow" [class.show]="isDropdownOpen('settings')">
+     <div class="credit-popup" >
+       <div class="popup-arrow"></div>
+       <p>
+         YOU HAVE <strong>$96.00 USD</strong> OF STORE CREDIT. TO USE IT, SIMPLY PLACE YOUR ORDER AND YOU WILL BE ABLE TO CHOOSE STORE CREDIT AS THE PAYMENT METHOD WHEN IT COMES TIME TO PAY FOR YOUR ORDER.
+       </p>
+     </div>
+</div>
+
+</div>
+
+
+   
+</div>
+
+    </div>
+  </header>
+
+<!-- 2nd Nav-bar -->
+
+<nav class="navbar">
+  <div class="nav-left">
+    <ul class="nav-links">
+      <!-- MEN DROPDOWN -->
+      <li class="dropdown" *ngFor="let item of sHeaderData">
+        <a [href]="'https://bomberld.com' + item.url"  style="font-size: 16px; font-weight: 600;">{{item.name | uppercase}}</a>
+        <div class="dropdown-menu">
+          <!-- <div class="dropdown-section" >
+            <h4 item.>Shop Men</h4>
+            <img src="https://via.placeholder.com/200x250" alt="Men" />
+          </div> -->
+          <div class="dropdown-section" *ngFor="let itemsub of item.children">
+            <h4 style="font-size: 18px; font-weight: 500;">{{itemsub.name }}</h4>
+            <div *ngFor="let i of itemsub.children">
+
+       <a [href]="'https://bomberld.com' + i.url" style="font-size: 18px; font-weight: 500;">{{ i.name }}</a>
+
+            </div>
+         
+          </div>
+          <!-- <div class="dropdown-section">
+            <h4>ACCESSORIES</h4>
+            <a href="#">Hats</a>
+            <a href="#">Beanies</a>
+          </div> -->
+        </div>
+      </li>
+<!-- {{sHeaderData | json}} -->
+      <!-- WOMEN -->
+      <!-- <li class="dropdown">
+        <a href="#">WOMEN</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-section">
+            <h4>SHOP WOMEN</h4>
+            <img src="https://via.placeholder.com/200x250" alt="Women" />
+          </div>
+          <div class="dropdown-section">
+            <h4>CLOTHING</h4>
+            <a href="#">Tops</a>
+            <a href="#">Hoodies</a>
+            <a href="#">Shorts</a>
+            <a href="#">Leggings</a>
+          </div>
+          <div class="dropdown-section">
+            <h4>ACCESSORIES</h4>
+            <a href="#">Caps</a>
+            <a href="#">Bags</a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="#">BOMBER GLOBAL</a></li> -->
+    </ul>
+  </div>
+
+  <!-- CENTER LOGO -->
+  <div class="nav-center">
+    <img src="./assets/BOMBER.png"/>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="nav-right">
+    <div class="search-box">
+      <input type="text" placeholder="search products..." />
+      <button><i class="fa fa-search"></i></button>
+    </div>
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-shopping-bag"></i>
+  </div>
+</nav>
+
+<!-- 3rd Nav-bar -->
+
+<nav class="profile-nav">
+  <ul>
+     <li *ngFor="let item of menuItems"
+        [class.active]="activeItem === item.key"
+        (click)="setActive(item.key)"
+          routerLink="{{ item.path }}"
+        routerLinkActive="router-active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        
+      {{ item.label }}
+    </li>
+  </ul>
+</nav>
+
